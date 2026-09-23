@@ -113,7 +113,7 @@ Project Work       : Completed
 ```
 
 <p align="center">
-  <img src="./internship_progress/Internship_Dashboard.png" width="900">
+  <img src="./assets/Internship_Dashboard.png" width="900">
 </p>
 
 <p align="center">
@@ -127,7 +127,7 @@ Project Work       : Completed
 The internship curriculum included structured lessons covering Artificial Intelligence, Python, Data Preprocessing, Machine Learning, Neural Networks, Deep Learning, and advanced AI applications.
 
 <p align="center">
-  <img src="./internship_progress/Internship_Content.png" width="900">
+  <img src="./assets/Internship_Content.png" width="900">
 </p>
 
 <p align="center">
@@ -141,7 +141,7 @@ The internship curriculum included structured lessons covering Artificial Intell
 The internship included a dedicated project development phase where practical AI/ML projects were developed and published.
 
 <p align="center">
-  <img src="./internship_progress/Internship_Project.png" width="900">
+  <img src="./assets/Internship_Project.png" width="900">
 </p>
 
 <p align="center">
@@ -335,7 +335,7 @@ I was selected for a **1-Month Artificial Intelligence Internship** at Codec Tec
 The internship was conducted from **28 July 2026 to 28 August 2026**.
 
 <p align="center">
-  <img src="./internship_documents/Internship_Offer_Letter.jpeg" width="900">
+  <img src="./Acheivements/Internship_Offer_Letter.jpeg" width="900">
 </p>
 
 <p align="center">
@@ -349,7 +349,7 @@ The internship was conducted from **28 July 2026 to 28 August 2026**.
 Successfully completed the **Artificial Intelligence Training Program** at Codec Technologies.
 
 <p align="center">
-  <img src="./certificates/Internship_Training_Certificate.jpeg" width="900">
+  <img src="./Acheivements/Internship_Training_Certificate.jpeg" width="900">
 </p>
 
 <p align="center">
@@ -363,7 +363,7 @@ Successfully completed the **Artificial Intelligence Training Program** at Codec
 Successfully completed the **1-Month AICTE & ICAC Approved Artificial Intelligence Internship Program** at Codec Technologies.
 
 <p align="center">
-  <img src="./certificates/Internship_Completion_Certificate.jpeg" width="900">
+  <img src="./Acheivements/Internship_Completion_Certificate.jpeg" width="900">
 </p>
 
 <p align="center">
@@ -386,7 +386,7 @@ The recommendation highlights:
 - Project involvement
 
 <p align="center">
-  <img src="./certificates/Letter_of_Recommendation.jpeg" width="900">
+  <img src="./Acheivements/Letter_of_Recommendation.jpeg" width="900">
 </p>
 
 <p align="center">
