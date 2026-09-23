@@ -1,31 +1,5 @@
 # 🚀 CodeAlpha Full Stack Development Internship
 
-<p align="center">
-  <img src="./assets/E-Commerce_Store.png" alt="ShopSphere E-Commerce Store" width="900">
-</p>
-
-<p align="center">
-  <strong>🌐 Live Project:</strong>
-  <a href="https://modern-full-stack-e-commerce-store.vercel.app/">
-    https://modern-full-stack-e-commerce-store.vercel.app/
-  </a>
-</p>
-
----
-
-<p align="center">
-  <img src="./assets/PulseNet_Social-Media.png" alt="PulseNet Social Media Application" width="900">
-</p>
-
-<p align="center">
-  <strong>🌐 Live Project:</strong>
-  <a href="https://pulse-net-social-media.vercel.app/feed.html">
-    https://pulse-net-social-media.vercel.app/feed.html
-  </a>
-</p>
-
----
-
 ## 👨‍💻 About the Internship
 
 This repository documents my **CodeAlpha Full Stack Development Internship**, including the projects developed, internship tasks, deployment work, and official internship documentation.
@@ -52,6 +26,10 @@ During the internship, I worked on practical full-stack applications with a focu
 https://modern-full-stack-e-commerce-store.vercel.app/
 
 ShopSphere is a modern e-commerce web application developed to provide a complete online shopping experience with product browsing, authentication, cart management, wishlist functionality, checkout and order management.
+
+<p align="center">
+  <img src="./assets/E-Commerce_Store.png" alt="ShopSphere E-Commerce Store" width="900">
+</p>
 
 ### ✨ Features
 
@@ -91,6 +69,11 @@ ShopSphere is a modern e-commerce web application developed to provide a complet
 https://pulse-net-social-media.vercel.app/feed.html
 
 PulseNet is a social media platform that allows users to create posts, upload images, interact with content, follow users and communicate through a modern social feed.
+
+
+<p align="center">
+  <img src="./assets/Social-Media_app.png" alt="PulseNet Social Media Application" width="900">
+</p>
 
 ### ✨ Features
 
@@ -176,7 +159,7 @@ Frontend UI Update
 The internship provided a task submission portal containing the assigned project requirements.
 
 <p align="center">
-  <img src="./assets/Task_Submission_Portal.jpeg" alt="CodeAlpha Task Submission Portal" width="850">
+  <img src="./assets/Task Completion.jpeg" alt="CodeAlpha Task Submission Portal" width="850">
 </p>
 
 ---
@@ -186,7 +169,7 @@ The internship provided a task submission portal containing the assigned project
 After completing the internship requirements, I received the official completion communication regarding the internship completion certificate and Letter of Recommendation.
 
 <p align="center">
-  <img src="./assets/Internship_Completed_Email.jpeg" alt="Internship Completion Email" width="850">
+  <img src="./assets/Internship completed Mail.jpeg" alt="Internship Completion Email" width="850">
 </p>
 
 ---
