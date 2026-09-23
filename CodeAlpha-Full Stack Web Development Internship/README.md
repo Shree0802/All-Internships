@@ -72,7 +72,7 @@ PulseNet is a social media platform that allows users to create posts, upload im
 
 
 <p align="center">
-  <img src="./assets/Social-Media_app.png" alt="PulseNet Social Media Application" width="900">
+  <img src="./assets/Social-Media _app.png" alt="PulseNet Social Media Application" width="900">
 </p>
 
 ### ✨ Features
