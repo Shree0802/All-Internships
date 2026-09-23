@@ -1,0 +1,56 @@
+/* ====================================================
+   SHOPSPHERE - DARK MODE STYLES & OVERRIDES
+   ==================================================== */
+
+body.dark-theme .navbar {
+  background: rgba(11, 15, 25, 0.85);
+  border-bottom-color: rgba(255, 255, 255, 0.1);
+}
+
+body.dark-theme .product-card-img-wrapper {
+  background-color: #1e293b;
+}
+
+body.dark-theme .nav-search-input {
+  background-color: #1e293b;
+  color: #f8fafc;
+  border-color: #334155;
+}
+
+body.dark-theme .nav-search-input:focus {
+  background-color: #0f172a;
+}
+
+body.dark-theme .category-card {
+  background-color: #111827;
+  border-color: #1f2937;
+}
+
+body.dark-theme .testimonial-card {
+  background-color: #111827;
+  border-color: #1f2937;
+}
+
+body.dark-theme .form-control {
+  background-color: #1e293b;
+  border-color: #334155;
+  color: #f8fafc;
+}
+
+body.dark-theme .cart-drawer {
+  background-color: #0f172a;
+}
+
+body.dark-theme .cart-drawer-footer {
+  background-color: #1e293b;
+}
+
+body.dark-theme .search-suggestions {
+  background-color: #0f172a;
+  border-color: #334155;
+}
+
+body.dark-theme .user-dropdown {
+  background-color: #0f172a;
+  border-color: #334155;
+}

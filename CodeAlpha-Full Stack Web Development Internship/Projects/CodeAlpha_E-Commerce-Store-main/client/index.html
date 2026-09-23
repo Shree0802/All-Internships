@@ -1,0 +1,266 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>ShopSphere – Modern Full Stack E-Commerce Store</title>
+  <meta name="description" content="Discover premium electronics, fashion, shoes, books, accessories, and home appliances at ShopSphere with ultra-fast delivery and secure checkout.">
+  
+  <!-- CSS Stylesheets -->
+  <link rel="stylesheet" href="/css/main.css">
+  <link rel="stylesheet" href="/css/components.css">
+  <link rel="stylesheet" href="/css/dark-mode.css">
+  <link rel="stylesheet" href="/css/responsive.css">
+</head>
+<body>
+
+  <!-- Sticky Glassmorphic Navbar -->
+  <nav class="navbar">
+    <div class="container navbar-container">
+      <a href="/" class="brand-logo">
+        <div class="brand-icon">🛍️</div>
+        Shop<span>Sphere</span>
+      </a>
+
+      <!-- Search Input with Auto-complete -->
+      <div class="nav-search">
+        <span class="nav-search-icon">🔍</span>
+        <input type="text" id="nav-search-input" class="nav-search-input" placeholder="Search products, brands & categories..." autocomplete="off">
+        <div id="search-suggestions" class="search-suggestions"></div>
+      </div>
+
+      <!-- Navigation Links -->
+      <ul class="nav-menu" id="nav-menu">
+        <li><a href="/" class="nav-link active">Home</a></li>
+        <li><a href="/products" class="nav-link">Products</a></li>
+        <li><a href="/about" class="nav-link">About</a></li>
+        <li><a href="/contact" class="nav-link">Contact</a></li>
+      </ul>
+
+      <!-- Action Buttons -->
+      <div class="nav-actions">
+        <button class="icon-btn" id="theme-toggle-btn" title="Toggle Dark/Light Mode">🌙</button>
+        
+        <a href="/cart" class="icon-btn" title="Shopping Cart">
+          🛒
+          <span class="cart-badge-count" style="display:none;">0</span>
+        </a>
+
+        <div class="user-menu-container">
+          <button class="icon-btn" id="user-menu-btn" title="User Account">👤</button>
+          <div class="user-dropdown" id="user-dropdown"></div>
+        </div>
+
+        <button class="mobile-menu-toggle" id="mobile-menu-toggle">☰</button>
+      </div>
+    </div>
+  </nav>
+
+  <!-- Hero Section -->
+  <section class="hero">
+    <div class="container hero-grid">
+      <div class="hero-content">
+        <span class="badge badge-discount mb-2" style="font-size:0.85rem;">NEW SEASON ARRIVALS 2026</span>
+        <h1>Experience Modern <span>Full Stack</span> Shopping</h1>
+        <p>Explore over 25+ curated premium items spanning high-performance electronics, luxury fashion, footwear, smart home appliances, and accessories with instant checkout.</p>
+        <div class="hero-btns">
+          <a href="/products" class="btn btn-primary">Shop Catalog Now →</a>
+          <a href="/about" class="btn btn-secondary" style="color:#fff; border-color:rgba(255,255,255,0.4);">Learn More</a>
+        </div>
+      </div>
+      <div class="hero-image-wrapper">
+        <img src="https://images.unsplash.com/photo-1505740420928-5e560c06d30e?w=800&auto=format&fit=crop&q=80" alt="Hero Audio Headphones" class="hero-main-img" />
+      </div>
+    </div>
+  </section>
+
+  <!-- Featured Categories -->
+  <section class="section">
+    <div class="container">
+      <div class="section-header">
+        <span class="section-subtitle">CURATED COLLECTIONS</span>
+        <h2 class="section-title">Shop by Category</h2>
+        <p class="section-description">Select your favorite category to quickly discover top-rated trending items.</p>
+      </div>
+
+      <div class="category-grid" id="home-category-grid">
+        <div class="category-card" onclick="window.location.href='/products?category=Electronics'">
+          <div class="category-card-icon">⚡</div>
+          <div class="category-card-title">Electronics</div>
+          <div class="category-card-count">Gadgets & Audio</div>
+        </div>
+        <div class="category-card" onclick="window.location.href='/products?category=Fashion'">
+          <div class="category-card-icon">👔</div>
+          <div class="category-card-title">Fashion</div>
+          <div class="category-card-count">Apparel & Apparel</div>
+        </div>
+        <div class="category-card" onclick="window.location.href='/products?category=Shoes'">
+          <div class="category-card-icon">👟</div>
+          <div class="category-card-title">Shoes</div>
+          <div class="category-card-count">Footwear & Sneakers</div>
+        </div>
+        <div class="category-card" onclick="window.location.href='/products?category=Accessories'">
+          <div class="category-card-icon">⌚</div>
+          <div class="category-card-title">Accessories</div>
+          <div class="category-card-count">Watches & Leather</div>
+        </div>
+        <div class="category-card" onclick="window.location.href='/products?category=Home Appliances'">
+          <div class="category-card-icon">☕</div>
+          <div class="category-card-title">Home Appliances</div>
+          <div class="category-card-count">Smart Home Essentials</div>
+        </div>
+        <div class="category-card" onclick="window.location.href='/products?category=Sports'">
+          <div class="category-card-icon">🏋️</div>
+          <div class="category-card-title">Sports</div>
+          <div class="category-card-count">Fitness Gear</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Featured Products Section -->
+  <section class="section" style="background-color: var(--color-card-bg); border-top: 1px solid var(--color-border); border-bottom: 1px solid var(--color-border);">
+    <div class="container">
+      <div class="section-header">
+        <span class="section-subtitle">HANDPICKED SELECTION</span>
+        <h2 class="section-title">Featured Products</h2>
+        <p class="section-description">Our top picks backed by customer reviews and unbeatable prices.</p>
+      </div>
+
+      <div class="product-grid" id="featured-products-grid">
+        <div class="text-center" style="grid-column: 1/-1; padding: 2rem; color: var(--color-text-muted);">Loading featured products...</div>
+      </div>
+
+      <div class="text-center mt-3">
+        <a href="/products" class="btn btn-secondary">Explore All Products →</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- Testimonials Section -->
+  <section class="section">
+    <div class="container">
+      <div class="section-header">
+        <span class="section-subtitle">CUSTOMER REVIEWS</span>
+        <h2 class="section-title">What Our Buyers Say</h2>
+      </div>
+
+      <div class="testimonials-grid">
+        <div class="testimonial-card">
+          <p class="testimonial-text">"ShopSphere delivered my noise-cancelling headphones in under 48 hours. The audio quality is phenomenal and customer service was top tier!"</p>
+          <div class="testimonial-user">
+            <img src="https://images.unsplash.com/photo-1534528741775-53994a69daeb?w=200&auto=format&fit=crop&q=80" alt="Sarah M." class="testimonial-avatar" />
+            <div>
+              <div class="testimonial-name">Sarah Jenkins</div>
+              <div class="testimonial-role">Verified Buyer – Electronics</div>
+            </div>
+          </div>
+        </div>
+
+        <div class="testimonial-card">
+          <p class="testimonial-text">"The carbon cushion running shoes fit perfectly right out of the box. High build quality, sleek design, and smooth checkout experience."</p>
+          <div class="testimonial-user">
+            <img src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=200&auto=format&fit=crop&q=80" alt="David R." class="testimonial-avatar" />
+            <div>
+              <div class="testimonial-name">David Roberts</div>
+              <div class="testimonial-role">Verified Buyer – Shoes</div>
+            </div>
+          </div>
+        </div>
+
+        <div class="testimonial-card">
+          <p class="testimonial-text">"Clean layout, instant cart updates, and realistic tracking. Absolutely loving my new Barista Espresso machine!"</p>
+          <div class="testimonial-user">
+            <img src="https://images.unsplash.com/photo-1494790108377-be9c29b29330?w=200&auto=format&fit=crop&q=80" alt="Elena T." class="testimonial-avatar" />
+            <div>
+              <div class="testimonial-name">Elena Torres</div>
+              <div class="testimonial-role">Verified Buyer – Home Appliances</div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Newsletter Subscription -->
+  <section class="section">
+    <div class="container">
+      <div class="newsletter-box">
+        <h2>Subscribe for Special Offers</h2>
+        <p>Join over 25,000+ shoppers to get secret discounts, early access to new releases, and tech deals directly to your inbox.</p>
+        <form class="newsletter-form" onsubmit="event.preventDefault(); Toast.success('Thank you for subscribing to ShopSphere newsletter!'); this.reset();">
+          <input type="email" class="newsletter-input" placeholder="Enter your email address..." required>
+          <button type="submit" class="btn btn-primary">Subscribe</button>
+        </form>
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="footer">
+    <div class="container">
+      <div class="footer-grid">
+        <div class="footer-brand">
+          <h3>🛍️ ShopSphere</h3>
+          <p>Next-generation full stack e-commerce platform built for speed, responsiveness, and premium user experience.</p>
+        </div>
+        <div>
+          <h4 class="footer-title">Quick Links</h4>
+          <ul class="footer-links">
+            <li><a href="/products">All Products</a></li>
+            <li><a href="/cart">Shopping Cart</a></li>
+            <li><a href="/about">About Us</a></li>
+            <li><a href="/contact">Contact Us</a></li>
+          </ul>
+        </div>
+        <div>
+          <h4 class="footer-title">Categories</h4>
+          <ul class="footer-links">
+            <li><a href="/products?category=Electronics">Electronics</a></li>
+            <li><a href="/products?category=Fashion">Fashion</a></li>
+            <li><a href="/products?category=Shoes">Footwear</a></li>
+            <li><a href="/products?category=Home+Appliances">Home Appliances</a></li>
+          </ul>
+        </div>
+        <div>
+          <h4 class="footer-title">Customer Care</h4>
+          <ul class="footer-links">
+            <li><a href="/profile">My Account</a></li>
+            <li><a href="/order-history">Order History</a></li>
+            <li><a href="/contact">Support Center</a></li>
+          </ul>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <p>&copy; 2026 ShopSphere E-Commerce. CodeAlpha Full Stack Development Internship Project.</p>
+        <p>Built with Node.js, Express, MongoDB & Modern Vanilla Web Stack.</p>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Back to Top Button -->
+  <button class="back-to-top" id="back-to-top" title="Back to Top">↑</button>
+
+  <!-- JavaScript Scripts -->
+  <script src="/js/api.js"></script>
+  <script src="/js/toast.js"></script>
+  <script src="/js/auth.js"></script>
+  <script src="/js/wishlist.js"></script>
+  <script src="/js/cart.js"></script>
+  <script src="/js/products.js"></script>
+  <script src="/js/main.js"></script>
+  <script>
+    document.addEventListener('DOMContentLoaded', async () => {
+      const grid = document.getElementById('featured-products-grid');
+      try {
+        const data = await APIClient.get('/products/featured');
+        if (data.success && data.products.length > 0) {
+          grid.innerHTML = data.products.map(p => ProductsUI.renderProductCard(p)).join('');
+        }
+      } catch (err) {
+        grid.innerHTML = '<div style="grid-column:1/-1; text-align:center;">Failed to load featured products.</div>';
+      }
+    });
+  </script>
+</body>
+</html>

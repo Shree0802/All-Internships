@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Order Placed Successfully – ShopSphere</title>
+  <link rel="stylesheet" href="/css/main.css">
+  <link rel="stylesheet" href="/css/components.css">
+  <link rel="stylesheet" href="/css/dark-mode.css">
+  <link rel="stylesheet" href="/css/responsive.css">
+</head>
+<body>
+
+  <!-- Navbar -->
+  <nav class="navbar">
+    <div class="container navbar-container">
+      <a href="/" class="brand-logo"><div class="brand-icon">🛍️</div>Shop<span>Sphere</span></a>
+      <ul class="nav-menu" id="nav-menu">
+        <li><a href="/" class="nav-link">Home</a></li>
+        <li><a href="/products" class="nav-link">Products</a></li>
+      </ul>
+      <div class="nav-actions">
+        <button class="icon-btn" id="theme-toggle-btn">🌙</button>
+      </div>
+    </div>
+  </nav>
+
+  <main class="main-content" style="display: flex; align-items: center; justify-content: center; padding: 4rem 1rem;">
+    <div style="width: 100%; max-width: 580px; background: var(--color-card-bg); border: 1px solid var(--color-border); border-radius: var(--radius-lg); padding: 3rem; text-align: center; box-shadow: var(--shadow-lg);">
+      
+      <div style="width: 80px; height: 80px; background: rgba(16,185,129,0.15); color: var(--color-success); border-radius: var(--radius-full); display: flex; align-items: center; justify-content: center; font-size: 2.5rem; margin: 0 auto 1.5rem auto;">
+        ✓
+      </div>
+
+      <h1 style="font-size: 2.2rem; margin-bottom: 0.75rem;">Thank You For Your Order!</h1>
+      <p style="color: var(--color-text-muted); font-size: 1.05rem; margin-bottom: 2rem;">
+        Your order has been placed successfully and is currently being processed by our fulfillment team.
+      </p>
+
+      <div id="order-details-box" style="background: var(--color-bg); border: 1px solid var(--color-border); border-radius: var(--radius-md); padding: 1.5rem; text-align: left; margin-bottom: 2rem;">
+        Loading order details...
+      </div>
+
+      <div style="display: flex; gap: 1rem; justify-content: center;">
+        <a href="/order-history" class="btn btn-primary">View Order History</a>
+        <a href="/products" class="btn btn-secondary">Continue Shopping</a>
+      </div>
+
+    </div>
+  </main>
+
+  <script src="/js/api.js"></script>
+  <script src="/js/auth.js"></script>
+  <script src="/js/main.js"></script>
+  <script>
+    const formatPrice = (val) => '₹' + Math.round(val).toLocaleString('en-IN');
+
+    document.addEventListener('DOMContentLoaded', async () => {
+      const urlParams = new URLSearchParams(window.location.search);
+      const orderId = urlParams.get('id');
+      const box = document.getElementById('order-details-box');
+
+      if (!orderId) {
+        box.innerHTML = 'Order ID missing';
+        return;
+      }
+
+      try {
+        const data = await APIClient.get(`/orders/${orderId}`);
+        if (data.success && data.order) {
+          const o = data.order;
+          box.innerHTML = `
+            <div style="font-size: 0.85rem; color: var(--color-text-muted); margin-bottom: 0.5rem;">ORDER NUMBER</div>
+            <div style="font-weight: 800; font-size: 1.1rem; margin-bottom: 1rem; color: var(--color-accent);">${o._id}</div>
+            
+            <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 1rem; font-size: 0.9rem; margin-bottom: 1rem;">
+              <div><strong>Payment Method:</strong> ${o.paymentMethod}</div>
+              <div><strong>Status:</strong> <span class="badge badge-stock">${o.status}</span></div>
+            </div>
+
+            <div style="border-top: 1px solid var(--color-border); padding-top: 0.75rem; font-size: 0.95rem; font-weight: 700; display: flex; justify-content: space-between;">
+              <span>Total Amount Paid</span>
+              <span>${formatPrice(o.totalPrice)}</span>
+            </div>
+          `;
+        }
+      } catch (err) {
+        box.innerHTML = 'Order details updated.';
+      }
+    });
+  </script>
+</body>
+</html>

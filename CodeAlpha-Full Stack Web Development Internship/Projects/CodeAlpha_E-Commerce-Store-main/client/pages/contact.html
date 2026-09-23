@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Contact Us – ShopSphere</title>
+  <link rel="stylesheet" href="/css/main.css">
+  <link rel="stylesheet" href="/css/components.css">
+  <link rel="stylesheet" href="/css/dark-mode.css">
+  <link rel="stylesheet" href="/css/responsive.css">
+</head>
+<body>
+
+  <!-- Navbar -->
+  <nav class="navbar">
+    <div class="container navbar-container">
+      <a href="/" class="brand-logo"><div class="brand-icon">🛍️</div>Shop<span>Sphere</span></a>
+      <ul class="nav-menu" id="nav-menu">
+        <li><a href="/" class="nav-link">Home</a></li>
+        <li><a href="/products" class="nav-link">Products</a></li>
+        <li><a href="/about" class="nav-link">About</a></li>
+        <li><a href="/contact" class="nav-link active">Contact</a></li>
+      </ul>
+      <div class="nav-actions">
+        <button class="icon-btn" id="theme-toggle-btn">🌙</button>
+        <a href="/cart" class="icon-btn">🛒<span class="cart-badge-count" style="display:none;">0</span></a>
+        <div class="user-menu-container">
+          <button class="icon-btn" id="user-menu-btn">👤</button>
+          <div class="user-dropdown" id="user-dropdown"></div>
+        </div>
+      </div>
+    </div>
+  </nav>
+
+  <main class="main-content">
+    <section class="section">
+      <div class="container" style="max-width: 800px;">
+        <div class="text-center" style="margin-bottom: 2.5rem;">
+          <h1 style="font-size: 2.2rem; margin-bottom: 0.5rem;">Get in Touch</h1>
+          <p style="color: var(--color-text-muted);">Have questions regarding an order or partnership? Drop us a message below.</p>
+        </div>
+
+        <div style="background: var(--color-card-bg); border: 1px solid var(--color-border); border-radius: var(--radius-lg); padding: 2.5rem;">
+          <form onsubmit="event.preventDefault(); Toast.success('Thank you! Your message has been sent to ShopSphere support.'); this.reset();">
+            <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 1rem;">
+              <div class="form-group">
+                <label class="form-label" for="c-name">Your Name *</label>
+                <input type="text" id="c-name" class="form-control" placeholder="John Doe" required />
+              </div>
+              <div class="form-group">
+                <label class="form-label" for="c-email">Email Address *</label>
+                <input type="email" id="c-email" class="form-control" placeholder="john@example.com" required />
+              </div>
+            </div>
+
+            <div class="form-group">
+              <label class="form-label" for="c-subject">Subject *</label>
+              <input type="text" id="c-subject" class="form-control" placeholder="Order Inquiry #1002" required />
+            </div>
+
+            <div class="form-group">
+              <label class="form-label" for="c-message">Message *</label>
+              <textarea id="c-message" class="form-control" rows="5" placeholder="Type your message here..." required></textarea>
+            </div>
+
+            <button type="submit" class="btn btn-primary" style="width: 100%; padding: 0.9rem;">
+              Send Message ✉️
+            </button>
+          </form>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <div class="container"><div class="footer-bottom"><p>&copy; 2026 ShopSphere</p></div></div>
+  </footer>
+
+  <script src="/js/api.js"></script>
+  <script src="/js/toast.js"></script>
+  <script src="/js/auth.js"></script>
+  <script src="/js/main.js"></script>
+</body>
+</html>
