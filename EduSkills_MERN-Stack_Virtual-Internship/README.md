@@ -72,22 +72,22 @@ The internship curriculum also included a capstone e-commerce platform covering 
 
 ### 1. MERN Stack Course Certificate
 <p align="center">
-  <img src="assets/MERN_Stack-Course_Certificate.png" alt="MERN Stack Course Certificate" width="80%">
+  <img src="MERN_Stack-Course_Certificate.png" alt="MERN Stack Course Certificate" width="80%">
 </p>
 
 ### 2. Virtual Internship Completion Certificate
 <p align="center">
-  <img src="assets/MERN_Stack-Inetrnship_Certificate.png" alt="MERN Stack Internship Certificate" width="80%">
+  <img src="MERN_Stack-Inetrnship_Certificate.png" alt="MERN Stack Internship Certificate" width="80%">
 </p>
 
 ### 3. Internship Curriculum
 <p align="center">
-  <img src="assets/MERN_Stack-Internship_Curriculum.png" alt="MERN Stack Internship Curriculum" width="80%">
+  <img src="MERN_Stack-Internship_Curriculum.png" alt="MERN Stack Internship Curriculum" width="80%">
 </p>
 
 ### 4. Internship Offer Letter
 <p align="center">
-  <img src="assets/MERN_Stack-Internship_Offer-Letter.png" alt="MERN Stack Internship Offer Letter" width="80%">
+  <img src="MERN_Stack-Internship_Offer-Letter.png" alt="MERN Stack Internship Offer Letter" width="80%">
 </p>
 
 ### Project Report: File Metadata Analyzer
