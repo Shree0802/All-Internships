@@ -4,15 +4,32 @@
 
 ### AICTE • EduSkills Academy • National Internship Portal
 
-**Prathamesh Balaji Patil**  
-B.Tech | Artificial Intelligence and Machine Learning  
+**Prathamesh Balaji Patil**
+B.Tech | Artificial Intelligence and Machine Learning
 D. Y. Patil College of Engineering and Technology, Kolhapur
 
 <img src="MERN_Virtual-Inetrnship_Completion-Badge.webp" alt="MERN Virtual Internship Completion Badge" width="220">
 
 **Successfully completed an 8-week virtual internship in MERN Full Stack Development with Project.**
 
+<br>
+
+<a href="https://client-o9nb-git-main-axvercel.vercel.app/">
+  <img src="https://img.shields.io/badge/🌐_VISIT_LIVE_WEBSITE-Visit%20Now-00C853?style=for-the-badge" alt="Visit Live Website">
+</a>
+
 </div>
+
+---
+
+## 🌐 Live Project
+
+### 🚀 Explore the Deployed Website
+
+**Visit the live website:**
+👉 https://client-o9nb-git-main-axvercel.vercel.app/
+
+Explore the deployed web application and experience the project directly in your browser.
 
 ---
 
@@ -24,17 +41,17 @@ The program covered modern frontend and backend development, database integratio
 
 ## 🧠 Skills & Topics Covered
 
-- **JavaScript:** Core JavaScript and web development concepts
-- **React.js:** Components, props, hooks, side effects, and UI development
-- **State Management:** Context API and Redux Toolkit
-- **Routing:** React Router
-- **Styling:** Tailwind CSS
-- **Backend Development:** Node.js and Express.js
-- **Database:** MongoDB and Mongoose
-- **API Development:** RESTful APIs
-- **Authentication:** JWT-based authentication and authorization
-- **Development Workflow:** Git, deployment basics, and full-stack integration
-- **Project Work:** E-commerce platform concepts and a File Metadata Analyzer project
+* **JavaScript:** Core JavaScript and web development concepts
+* **React.js:** Components, props, hooks, side effects, and UI development
+* **State Management:** Context API and Redux Toolkit
+* **Routing:** React Router
+* **Styling:** Tailwind CSS
+* **Backend Development:** Node.js and Express.js
+* **Database:** MongoDB and Mongoose
+* **API Development:** RESTful APIs
+* **Authentication:** JWT-based authentication and authorization
+* **Development Workflow:** Git, deployment basics, and full-stack integration
+* **Project Work:** E-commerce platform concepts and a File Metadata Analyzer project
 
 ## 🛠️ Technologies
 
@@ -54,11 +71,11 @@ The program covered modern frontend and backend development, database integratio
 
 A Node.js project focused on analyzing text-file content and reporting useful metadata, including:
 
-- Total line count
-- Blank-line count
-- Word and character counts
-- Longest line identification
-- Structured analytics output
+* Total line count
+* Blank-line count
+* Word and character counts
+* Longest line identification
+* Structured analytics output
 
 The project helped me practice Node.js file-system operations, string manipulation, loops, and structured output.
 
@@ -71,26 +88,30 @@ The internship curriculum also included a capstone e-commerce platform covering 
 ## 🏆 Internship Certificates & Documents
 
 ### 1. MERN Stack Course Certificate
+
 <p align="center">
   <img src="MERN_Stack-Course_Certificate.png" alt="MERN Stack Course Certificate" width="80%">
 </p>
 
 ### 2. Virtual Internship Completion Certificate
+
 <p align="center">
   <img src="MERN_Stack-Inetrnship_Certificate.png" alt="MERN Stack Internship Certificate" width="80%">
 </p>
 
 ### 3. Internship Curriculum
+
 <p align="center">
   <img src="MERN_Stack-Internship_Curriculum.png" alt="MERN Stack Internship Curriculum" width="80%">
 </p>
 
 ### 4. Internship Offer Letter
+
 <p align="center">
   <img src="MERN_Stack-Internship_Offer-Letter.png" alt="MERN Stack Internship Offer Letter" width="80%">
 </p>
 
-### Project Report: File Metadata Analyzer
+### 📘 Project Report: File Metadata Analyzer
 
 The report documents the File Metadata Analyzer project, its objectives, methodology, implementation, learning outcomes, and future scope.
 
@@ -113,21 +134,21 @@ MERN-Virtual-Internship/
 
 ## 📚 Key Learning Outcomes
 
-- Understood how frontend and backend components work together.
-- Practiced building user interfaces with React.
-- Learned how to create backend APIs using Node.js and Express.
-- Explored MongoDB integration and Mongoose.
-- Learned the fundamentals of authentication and authorization.
-- Improved problem-solving through project-based practice.
-- Gained experience documenting project work and learning outcomes.
+* Understood how frontend and backend components work together.
+* Practiced building user interfaces with React.
+* Learned how to create backend APIs using Node.js and Express.
+* Explored MongoDB integration and Mongoose.
+* Learned the fundamentals of authentication and authorization.
+* Improved problem-solving through project-based practice.
+* Gained experience documenting project work and learning outcomes.
 
 ## 🔮 What I Plan to Do Next
 
-- Build and deploy more full-stack applications.
-- Strengthen API design, validation, and security practices.
-- Improve responsive UI development.
-- Practice Git and deployment workflows.
-- Expand my portfolio with practical projects.
+* Build and deploy more full-stack applications.
+* Strengthen API design, validation, and security practices.
+* Improve responsive UI development.
+* Practice Git and deployment workflows.
+* Expand my portfolio with practical projects.
 
 ## 🙌 Acknowledgement
 
