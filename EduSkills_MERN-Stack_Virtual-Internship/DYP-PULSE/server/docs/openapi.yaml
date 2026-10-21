@@ -1,0 +1,347 @@
+openapi: 3.0.3
+info:
+  title: DYPULSE Varsity & Campus E-Commerce API
+  description: >
+    Production REST API documentation for the DYPULSE collegiate lifestyle, sports equipment,
+    and custom team kit platform. All monetary amounts are authoritatively computed and 
+    stored in integer paise (1 INR = 100 paise).
+  version: 1.0.0
+  contact:
+    name: DYPULSE Varsity Operations
+    email: contact@dypulse.edu
+
+servers:
+  - url: http://localhost:5000/api/v1
+    description: Local Development Server
+  - url: https://dypulse-api.onrender.com/api/v1
+    description: Production Cloud Server (Render)
+
+tags:
+  - name: Health
+    description: Operational health and infrastructure status
+  - name: Authentication
+    description: User registration, login, logout, and password recovery
+  - name: Products
+    description: Catalog, variant exploration, search, and department filters
+  - name: Categories
+    description: Product category taxonomy and hierarchies
+  - name: Cart
+    description: Server-validated cart management and price sync
+  - name: Orders
+    description: Order calculation, atomic inventory reservation, and checkout
+  - name: Team Kit Studio
+    description: Custom jerseys, kits, and sports gear request lifecycle
+  - name: Coupons
+    description: Promotional coupon codes and qualification validation
+  - name: Reviews
+    description: Verified purchase customer ratings and reviews
+  - name: Payments
+    description: Razorpay test mode integration and webhook signature verification
+
+paths:
+  /health:
+    get:
+      tags: [Health]
+      summary: Service and database health check
+      responses:
+        '200':
+          description: Service operational
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  success: { type: boolean, example: true }
+                  data:
+                    type: object
+                    properties:
+                      status: { type: string, example: "ok" }
+                      database: { type: string, example: "connected" }
+                      timestamp: { type: string, format: date-time }
+                      uptime: { type: integer, example: 3600 }
+                      environment: { type: string, example: "production" }
+                      version: { type: string, example: "1.0.0" }
+
+  /auth/register:
+    post:
+      tags: [Authentication]
+      summary: Register a new student or athlete account
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+              required: [firstName, lastName, email, password]
+              properties:
+                firstName: { type: string, example: "Arjun" }
+                lastName: { type: string, example: "Patel" }
+                email: { type: string, format: email, example: "arjun.patel@dypulse.edu" }
+                password: { type: string, format: password, example: "CampusSecure@2026" }
+                phone: { type: string, example: "+919876543210" }
+      responses:
+        '201':
+          description: Account created successfully and session cookie established
+        '400':
+          description: Validation error or duplicate email
+
+  /auth/login:
+    post:
+      tags: [Authentication]
+      summary: Authenticate user session
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+              required: [email, password]
+              properties:
+                email: { type: string, format: email, example: "customer@dypulse.com" }
+                password: { type: string, format: password, example: "Customer@123" }
+      responses:
+        '200':
+          description: Login successful; returns user profile and sets session cookie
+        '401':
+          description: Invalid credentials
+
+  /auth/logout:
+    post:
+      tags: [Authentication]
+      summary: Invalidate user session
+      responses:
+        '200':
+          description: Session destroyed and cookie cleared
+
+  /auth/me:
+    get:
+      tags: [Authentication]
+      summary: Get authenticated user profile
+      responses:
+        '200':
+          description: User profile returned
+        '401':
+          description: Not authenticated
+
+  /products:
+    get:
+      tags: [Products]
+      summary: Browse catalog with filtering, search, and pagination
+      parameters:
+        - in: query
+          name: department
+          schema: { type: string, enum: [PLAY, CAMPUS] }
+        - in: query
+          name: category
+          schema: { type: string }
+        - in: query
+          name: search
+          schema: { type: string }
+        - in: query
+          name: maxPrice
+          schema: { type: integer, description: "Maximum price in paise" }
+        - in: query
+          name: sort
+          schema: { type: string, enum: [featured, price-asc, price-desc, newest] }
+        - in: query
+          name: page
+          schema: { type: integer, default: 1 }
+        - in: query
+          name: limit
+          schema: { type: integer, default: 20 }
+      responses:
+        '200':
+          description: List of products with pagination metadata
+
+  /products/{slug}:
+    get:
+      tags: [Products]
+      summary: Retrieve single product details by slug
+      parameters:
+        - in: path
+          name: slug
+          required: true
+          schema: { type: string }
+      responses:
+        '200':
+          description: Product details with active variants and ratings
+        '404':
+          description: Product not found
+
+  /cart:
+    get:
+      tags: [Cart]
+      summary: Retrieve authenticated user cart with authoritative calculations
+      responses:
+        '200':
+          description: Cart items and server-calculated price summary in paise
+    delete:
+      tags: [Cart]
+      summary: Clear all items in user cart
+      responses:
+        '200':
+          description: Cart emptied
+
+  /cart/add:
+    post:
+      tags: [Cart]
+      summary: Add an item or variant to cart
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+              required: [productId]
+              properties:
+                productId: { type: string }
+                sku: { type: string, example: "BAT-SH-01" }
+                size: { type: string, example: "Short Handle" }
+                color: { type: string, example: "Natural" }
+                quantity: { type: integer, default: 1 }
+      responses:
+        '200':
+          description: Item added or merged with existing row
+        '400':
+          description: Variant mismatch or insufficient stock
+
+  /orders:
+    post:
+      tags: [Orders]
+      summary: Place order with atomic inventory deduction
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+              required: [shippingAddress]
+              properties:
+                shippingAddress:
+                  type: object
+                  required: [street, city, state, pincode]
+                  properties:
+                    fullName: { type: string }
+                    phone: { type: string }
+                    street: { type: string }
+                    city: { type: string }
+                    state: { type: string }
+                    pincode: { type: string }
+                paymentMethod: { type: string, enum: [COD, ONLINE], default: "COD" }
+                couponCode: { type: string }
+                notes: { type: string }
+                idempotencyKey: { type: string }
+      responses:
+        '201':
+          description: Order placed successfully
+        '400':
+          description: Empty cart, inactive product, or variant mismatch
+        '409':
+          description: Stock reservation conflict
+
+  /orders/my-orders:
+    get:
+      tags: [Orders]
+      summary: Retrieve order history for current customer
+      responses:
+        '200':
+          description: Paginated list of customer orders
+
+  /orders/{id}/cancel:
+    post:
+      tags: [Orders]
+      summary: Cancel placed order and restore inventory & coupon
+      parameters:
+        - in: path
+          name: id
+          required: true
+          schema: { type: string }
+      requestBody:
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                reason: { type: string, example: "Changed mind on size" }
+      responses:
+        '200':
+          description: Order cancelled and inventory replenished
+        '400':
+          description: Cancellation disallowed (already shipped or delivered)
+
+  /team-kits:
+    post:
+      tags: [Team Kit Studio]
+      summary: Submit custom team kit or jersey customization request
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+              required: [sport, kitType, teamInfo]
+              properties:
+                sport: { type: string, example: "Cricket" }
+                kitType: { type: string, example: "Full sports kit" }
+                teamInfo:
+                  type: object
+                  required: [teamName, contactPerson, contactEmail]
+                  properties:
+                    teamName: { type: string, example: "DY Patil Varsity XI" }
+                    organization: { type: string, example: "DY Patil University" }
+                    contactPerson: { type: string, example: "Vikram Malhotra" }
+                    contactEmail: { type: string, format: email, example: "captain@dypulse.edu" }
+                    contactPhone: { type: string, example: "+919876543210" }
+                totalQuantity: { type: integer, example: 15 }
+      responses:
+        '201':
+          description: Team kit request created with unique TKS reference code
+
+  /coupons/validate:
+    post:
+      tags: [Coupons]
+      summary: Validate coupon code against subtotal and cart items
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+              required: [code, subtotalInPaise]
+              properties:
+                code: { type: string, example: "CAMPUS10" }
+                subtotalInPaise: { type: integer, example: 120000 }
+      responses:
+        '200':
+          description: Validation result and discount calculation
+
+  /reviews:
+    post:
+      tags: [Reviews]
+      summary: Submit verified purchase product review
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+              required: [productId, orderId, rating, reviewText]
+              properties:
+                productId: { type: string }
+                orderId: { type: string }
+                rating: { type: integer, minimum: 1, maximum: 5, example: 5 }
+                title: { type: string, example: "Exceptional Balance" }
+                reviewText: { type: string, example: "Great willow quality for collegiate tournaments." }
+      responses:
+        '201':
+          description: Review accepted and product rating updated
+        '403':
+          description: Review eligibility required (must have delivered order)
+
+components:
+  securitySchemes:
+    cookieAuth:
+      type: apiKey
+      in: cookie
+      name: dypulse.sid
+      description: Session cookie generated upon authentication
