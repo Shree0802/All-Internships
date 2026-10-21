@@ -8,7 +8,7 @@
 B.Tech | Artificial Intelligence and Machine Learning  
 D. Y. Patil College of Engineering and Technology, Kolhapur
 
-<img src="EduSkills_MERN-Stack_Virtual-Internship/MERN_Virtual-Inetrnship_Completion-Badge.webp" alt="MERN Virtual Internship Completion Badge" width="220">
+<img src="MERN_Virtual-Inetrnship_Completion-Badge.webp" alt="MERN Virtual Internship Completion Badge" width="220">
 
 **Successfully completed an 8-week virtual internship in MERN Full Stack Development with Project.**
 
