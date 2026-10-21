@@ -72,15 +72,15 @@ The internship curriculum also included a capstone e-commerce platform covering 
 
 ### Virtual Internship Completion Certificate
 
-[📄 View / Download Completion Certificate](MERN_Stack-Inetrnship_Certificate.jpeg)
+[📄 View / Download Completion Certificate](MERN_Stack-Inetrnship_Certificate.png)
 
 ### MERN Stack Course / Internship Credential
 
-[📄 View / Download MERN Stack Certificate](MERN_Stack-Course_Certificate.jpeg)
+[📄 View / Download MERN Stack Certificate](MERN_Stack-Course_Certificate.png)
 
 ### Internship Offer Letter
 
-[📄 View / Download Offer Letter](MERN_Stack-Internship_Offer-Letter.jpeg)
+[📄 View / Download Offer Letter](MERN_Stack-Internship_Offer-Letter.png)
 
 ### Project Report: File Metadata Analyzer
 
