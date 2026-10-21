@@ -8,7 +8,7 @@
 B.Tech | Artificial Intelligence and Machine Learning  
 D. Y. Patil College of Engineering and Technology, Kolhapur
 
-<img src="assets/MERN_Virtual-Internship_Completion-Badge.webp" alt="MERN Virtual Internship Completion Badge" width="220">
+<img src="MERN_Virtual-Internship_Completion-Badge.webp" alt="MERN Virtual Internship Completion Badge" width="220">
 
 **Successfully completed an 8-week virtual internship in MERN Full Stack Development with Project.**
 
@@ -72,15 +72,15 @@ The internship curriculum also included a capstone e-commerce platform covering 
 
 ### Virtual Internship Completion Certificate
 
-[📄 View / Download Completion Certificate](certificates/MERN_full-Stack-Development_Virtual-Internship_Certificate.pdf)
+[📄 View / Download Completion Certificate](MERN_full-Stack-Development_Virtual-Internship_Certificate.)
 
 ### MERN Stack Course / Internship Credential
 
-[📄 View / Download MERN Stack Certificate](certificates/MERN_Stack-Course_Certificate.pdf)
+[📄 View / Download MERN Stack Certificate](MERN_Stack-Course_Certificate.pdf)
 
 ### Internship Offer Letter
 
-[📄 View / Download Offer Letter](certificates/Offer_Letter.pdf)
+[📄 View / Download Offer Letter](MERN_Stack-Internship_Offer-Letter.jpeg)
 
 ### Project Report: File Metadata Analyzer
 
