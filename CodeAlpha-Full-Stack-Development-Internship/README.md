@@ -66,7 +66,7 @@ ShopSphere is a modern e-commerce web application developed to provide a complet
 ### Social Media Web Application
 
 **🌐 Live Demo:**  
-https://pulse-net-social-media.vercel.app/feed.html
+# https://pulse-net-social-media.vercel.app/feed.html
 
 PulseNet is a social media platform that allows users to create posts, upload images, interact with content, follow users and communicate through a modern social feed.
 
