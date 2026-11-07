@@ -22,13 +22,13 @@ During the internship, I worked on practical full-stack applications with a focu
 
 ### Modern Full Stack E-Commerce Store
 
-**🌐 Live Demo:**  
-https://modern-full-stack-e-commerce-store.vercel.app/
+# 🌐 Live Demo:https://shopspheree-commercestore.vercel.app/
+
 
 ShopSphere is a modern e-commerce web application developed to provide a complete online shopping experience with product browsing, authentication, cart management, wishlist functionality, checkout and order management.
 
 <p align="center">
-  <img src="./assets/E-Commerce_Store.png" alt="ShopSphere E-Commerce Store" width="900">
+  <img src="Shopsphere.png">
 </p>
 
 ### ✨ Features
