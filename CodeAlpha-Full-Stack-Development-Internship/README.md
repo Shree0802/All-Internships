@@ -28,7 +28,7 @@ During the internship, I worked on practical full-stack applications with a focu
 ShopSphere is a modern e-commerce web application developed to provide a complete online shopping experience with product browsing, authentication, cart management, wishlist functionality, checkout and order management.
 
 <p align="center">
-  <img src=".assests/Shopsphere.png">
+  <img src="./assets/Shopsphere.png">
 </p>
 
 ### ✨ Features
