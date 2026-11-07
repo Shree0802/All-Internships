@@ -1,0 +1,73 @@
+/** @type {import('tailwindcss').Config} */
+export default {
+  content: ['./index.html', './src/**/*.{js,ts,jsx,tsx}'],
+  theme: {
+    extend: {
+      colors: {
+        festivo: {
+          ivory: '#FAF8F5',
+          cream: '#F4EFE6',
+          sand: '#E9E1D2',
+          plum: {
+            50: '#FAF5F8',
+            100: '#F5EBF1',
+            200: '#EBD8E4',
+            300: '#DDB7CE',
+            400: '#CA8DB2',
+            500: '#B46695',
+            600: '#9B4C7B',
+            700: '#803C64',
+            800: '#693352',
+            850: '#4E203B',
+            900: '#3D172E',
+            950: '#230A19',
+          },
+          coral: {
+            50: '#FFF6F3',
+            100: '#FFEBE4',
+            200: '#FFD7CB',
+            300: '#FFB8A3',
+            400: '#FF8D6F',
+            500: '#F25835',
+            600: '#DF3C18',
+            700: '#BB2F12',
+            800: '#962913',
+            900: '#7B2515',
+            950: '#430F06',
+          },
+          gold: {
+            50: '#FDFCF7',
+            100: '#FAF6E8',
+            200: '#F3EBC9',
+            300: '#ECDC9E',
+            400: '#DFC96E',
+            500: '#C7AD3E',
+            600: '#A78C2C',
+            700: '#816922',
+            800: '#675220',
+            900: '#55441E',
+          },
+        },
+      },
+      fontFamily: {
+        sans: ['"Plus Jakarta Sans"', 'Inter', 'system-ui', '-apple-system', 'sans-serif'],
+        serif: ['"Playfair Display"', 'Georgia', 'serif'],
+        mono: ['"JetBrains Mono"', 'Menlo', 'monospace'],
+      },
+      boxShadow: {
+        xs: '0 1px 2px 0 rgba(35, 10, 25, 0.05)',
+        soft: '0 2px 12px -2px rgba(35, 10, 25, 0.05), 0 1px 4px -1px rgba(35, 10, 25, 0.03)',
+        card: '0 8px 24px -4px rgba(35, 10, 25, 0.06), 0 2px 8px -2px rgba(35, 10, 25, 0.03)',
+        floating: '0 20px 48px -8px rgba(35, 10, 25, 0.12), 0 8px 16px -4px rgba(35, 10, 25, 0.05)',
+        glow: '0 0 24px 0 rgba(242, 88, 53, 0.25)',
+        'glow-gold': '0 0 24px 0 rgba(199, 173, 62, 0.25)',
+      },
+      borderRadius: {
+        '2xl': '1rem',
+        '3xl': '1.5rem',
+        '4xl': '2rem',
+      },
+    },
+  },
+  plugins: [],
+};

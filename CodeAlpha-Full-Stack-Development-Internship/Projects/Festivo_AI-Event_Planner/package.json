@@ -1,0 +1,26 @@
+{
+  "name": "festivo-ai",
+  "version": "1.0.0",
+  "description": "Festivo AI: Your Intelligent Celebration Planner",
+  "private": true,
+  "scripts": {
+    "install:all": "npm --prefix server install --include=dev && npm --prefix client install --include=dev",
+    "dev:client": "npm --prefix client run dev",
+    "dev:server": "npm --prefix server run dev",
+    "build:client": "npm --prefix client run build",
+    "build:server": "npm --prefix server run build",
+    "build": "npm --prefix client run build && npm --prefix server run build",
+    "test": "npm --prefix server run test",
+    "start": "npm --prefix server start"
+  },
+  "keywords": [
+    "event-planner",
+    "generative-ai",
+    "celebration",
+    "gemini",
+    "react",
+    "express"
+  ],
+  "author": "Festivo AI Team",
+  "license": "MIT"
+}

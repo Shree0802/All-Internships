@@ -1,0 +1,207 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Products Catalog – ShopSphere</title>
+  <link rel="stylesheet" href="/css/main.css">
+  <link rel="stylesheet" href="/css/components.css">
+  <link rel="stylesheet" href="/css/dark-mode.css">
+  <link rel="stylesheet" href="/css/responsive.css">
+</head>
+<body>
+
+  <!-- Navbar -->
+  <nav class="navbar">
+    <div class="container navbar-container">
+      <a href="/" class="brand-logo"><div class="brand-icon">🛍️</div>Shop<span>Sphere</span></a>
+      <div class="nav-search">
+        <span class="nav-search-icon">🔍</span>
+        <input type="text" id="nav-search-input" class="nav-search-input" placeholder="Search catalog..." autocomplete="off">
+        <div id="search-suggestions" class="search-suggestions"></div>
+      </div>
+      <ul class="nav-menu" id="nav-menu">
+        <li><a href="/" class="nav-link">Home</a></li>
+        <li><a href="/products" class="nav-link active">Products</a></li>
+        <li><a href="/about" class="nav-link">About</a></li>
+        <li><a href="/contact" class="nav-link">Contact</a></li>
+      </ul>
+      <div class="nav-actions">
+        <button class="icon-btn" id="theme-toggle-btn">🌙</button>
+        <a href="/cart" class="icon-btn">🛒<span class="cart-badge-count" style="display:none;">0</span></a>
+        <div class="user-menu-container">
+          <button class="icon-btn" id="user-menu-btn">👤</button>
+          <div class="user-dropdown" id="user-dropdown"></div>
+        </div>
+        <button class="mobile-menu-toggle" id="mobile-menu-toggle">☰</button>
+      </div>
+    </div>
+  </nav>
+
+  <!-- Products Main Content -->
+  <main class="main-content">
+    <section class="section" style="padding-top: 2.5rem;">
+      <div class="container">
+        
+        <!-- Header Controls -->
+        <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 2rem; flex-wrap: wrap; gap: 1rem;">
+          <div>
+            <h1 style="font-size: 2rem;">Products Catalog</h1>
+            <p id="products-count-text" style="color: var(--color-text-muted); font-size: 0.95rem;">Showing all available products</p>
+          </div>
+
+          <div style="display: flex; gap: 1rem; align-items: center;">
+            <label for="sort-select" style="font-weight: 600; font-size: 0.9rem;">Sort by:</label>
+            <select id="sort-select" class="form-control" style="width: auto; padding: 0.5rem 1rem;">
+              <option value="-createdAt">Newest Arrivals</option>
+              <option value="price">Price: Low to High</option>
+              <option value="-price">Price: High to Low</option>
+              <option value="-rating">Highest Rated</option>
+            </select>
+          </div>
+        </div>
+
+        <!-- Catalog Layout Grid (Sidebar + Product Grid) -->
+        <div style="display: grid; grid-template-columns: 260px 1fr; gap: 2.5rem; align-items: start;">
+          
+          <!-- Filter Sidebar -->
+          <aside style="background-color: var(--color-card-bg); border: 1px solid var(--color-border); border-radius: var(--radius-md); padding: 1.5rem;">
+            <h3 style="margin-bottom: 1.25rem; font-size: 1.1rem; border-bottom: 1px solid var(--color-border); padding-bottom: 0.75rem;">Categories</h3>
+            
+            <ul id="category-filter-list" style="margin-bottom: 2rem; display: flex; flex-direction: column; gap: 0.5rem;">
+              <li>
+                <button class="btn btn-secondary btn-sm category-btn active" data-category="All" style="width: 100%; justify-content: space-between;">
+                  <span>All Categories</span>
+                </button>
+              </li>
+              <li><button class="btn btn-secondary btn-sm category-btn" data-category="Electronics" style="width:100%; justify-content:space-between;"><span>Electronics</span></button></li>
+              <li><button class="btn btn-secondary btn-sm category-btn" data-category="Fashion" style="width:100%; justify-content:space-between;"><span>Fashion</span></button></li>
+              <li><button class="btn btn-secondary btn-sm category-btn" data-category="Shoes" style="width:100%; justify-content:space-between;"><span>Shoes</span></button></li>
+              <li><button class="btn btn-secondary btn-sm category-btn" data-category="Books" style="width:100%; justify-content:space-between;"><span>Books</span></button></li>
+              <li><button class="btn btn-secondary btn-sm category-btn" data-category="Accessories" style="width:100%; justify-content:space-between;"><span>Accessories</span></button></li>
+              <li><button class="btn btn-secondary btn-sm category-btn" data-category="Home Appliances" style="width:100%; justify-content:space-between;"><span>Home Appliances</span></button></li>
+              <li><button class="btn btn-secondary btn-sm category-btn" data-category="Sports" style="width:100%; justify-content:space-between;"><span>Sports</span></button></li>
+            </ul>
+
+            <button id="clear-filters-btn" class="btn btn-dark btn-sm" style="width: 100%;">Reset Filters</button>
+          </aside>
+
+          <!-- Product Cards Grid -->
+          <div>
+            <div id="catalog-products-grid" class="product-grid">
+              <div class="text-center" style="grid-column: 1/-1; padding: 3rem;">Loading catalog...</div>
+            </div>
+
+            <!-- Pagination Buttons -->
+            <div id="pagination-wrapper" style="display: flex; justify-content: center; gap: 0.5rem; margin-top: 3rem;"></div>
+          </div>
+
+        </div>
+
+      </div>
+    </section>
+  </main>
+
+  <!-- Footer -->
+  <footer class="footer">
+    <div class="container">
+      <div class="footer-bottom">
+        <p>&copy; 2026 ShopSphere E-Commerce Store</p>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Scripts -->
+  <script src="/js/api.js"></script>
+  <script src="/js/toast.js"></script>
+  <script src="/js/auth.js"></script>
+  <script src="/js/wishlist.js"></script>
+  <script src="/js/cart.js"></script>
+  <script src="/js/products.js"></script>
+  <script src="/js/main.js"></script>
+  <script>
+    let currentCategory = 'All';
+    let currentSort = '-createdAt';
+    let currentPage = 1;
+
+    async function fetchProducts() {
+      const grid = document.getElementById('catalog-products-grid');
+      const countText = document.getElementById('products-count-text');
+      const pagination = document.getElementById('pagination-wrapper');
+
+      grid.innerHTML = '<div style="grid-column: 1/-1; text-align: center; padding: 3rem;">Loading products...</div>';
+
+      const urlParams = new URLSearchParams(window.location.search);
+      const searchParam = urlParams.get('search') || '';
+      if (urlParams.get('category')) currentCategory = urlParams.get('category');
+
+      let queryStr = `/products?page=${currentPage}&limit=9&sort=${currentSort}`;
+      if (currentCategory !== 'All') queryStr += `&category=${encodeURIComponent(currentCategory)}`;
+      if (searchParam) queryStr += `&search=${encodeURIComponent(searchParam)}`;
+
+      try {
+        const data = await APIClient.get(queryStr);
+        if (data.success) {
+          countText.textContent = `Showing ${data.products.length} of ${data.totalProducts} products`;
+
+          if (data.products.length === 0) {
+            grid.innerHTML = '<div style="grid-column: 1/-1; text-align: center; padding: 4rem; color: var(--color-text-muted);">No products matching your search query or filter.</div>';
+            pagination.innerHTML = '';
+            return;
+          }
+
+          grid.innerHTML = data.products.map(p => ProductsUI.renderProductCard(p)).join('');
+
+          // Render Pagination
+          let navBtns = '';
+          for (let i = 1; i <= data.totalPages; i++) {
+            navBtns += `<button class="btn ${i === currentPage ? 'btn-primary' : 'btn-secondary'} btn-sm" onclick="changePage(${i})">${i}</button>`;
+          }
+          pagination.innerHTML = navBtns;
+        }
+      } catch (err) {
+        grid.innerHTML = '<div style="grid-column: 1/-1; text-align: center; color: var(--color-danger);">Error fetching products.</div>';
+      }
+    }
+
+    function changePage(page) {
+      currentPage = page;
+      fetchProducts();
+      window.scrollTo({ top: 0, behavior: 'smooth' });
+    }
+
+    document.addEventListener('DOMContentLoaded', () => {
+      fetchProducts();
+
+      // Category click handlers
+      document.querySelectorAll('.category-btn').forEach(btn => {
+        btn.addEventListener('click', (e) => {
+          document.querySelectorAll('.category-btn').forEach(b => b.classList.remove('active'));
+          const target = e.currentTarget;
+          target.classList.add('active');
+          currentCategory = target.dataset.category;
+          currentPage = 1;
+          fetchProducts();
+        });
+      });
+
+      // Sort change handler
+      document.getElementById('sort-select').addEventListener('change', (e) => {
+        currentSort = e.target.value;
+        fetchProducts();
+      });
+
+      // Clear filters handler
+      document.getElementById('clear-filters-btn').addEventListener('click', () => {
+        currentCategory = 'All';
+        currentSort = '-createdAt';
+        currentPage = 1;
+        document.getElementById('sort-select').value = '-createdAt';
+        document.querySelectorAll('.category-btn').forEach(b => b.classList.remove('active'));
+        document.querySelector('.category-btn[data-category="All"]').classList.add('active');
+        fetchProducts();
+      });
+    });
+  </script>
+</body>
+</html>

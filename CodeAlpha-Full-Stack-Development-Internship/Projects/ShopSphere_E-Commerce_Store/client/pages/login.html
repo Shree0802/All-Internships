@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Sign In – ShopSphere</title>
+  <link rel="stylesheet" href="/css/main.css">
+  <link rel="stylesheet" href="/css/components.css">
+  <link rel="stylesheet" href="/css/dark-mode.css">
+  <link rel="stylesheet" href="/css/responsive.css">
+</head>
+<body>
+
+  <!-- Navbar -->
+  <nav class="navbar">
+    <div class="container navbar-container">
+      <a href="/" class="brand-logo"><div class="brand-icon">🛍️</div>Shop<span>Sphere</span></a>
+      <ul class="nav-menu" id="nav-menu">
+        <li><a href="/" class="nav-link">Home</a></li>
+        <li><a href="/products" class="nav-link">Products</a></li>
+      </ul>
+      <div class="nav-actions">
+        <button class="icon-btn" id="theme-toggle-btn">🌙</button>
+      </div>
+    </div>
+  </nav>
+
+  <main class="main-content" style="display: flex; align-items: center; justify-content: center; min-height: calc(100vh - 160px); padding: 2rem 1rem;">
+    <div style="width: 100%; max-width: 440px; background-color: var(--color-card-bg); border: 1px solid var(--color-border); border-radius: var(--radius-lg); padding: 2.5rem; box-shadow: var(--shadow-lg);">
+      
+      <div class="text-center" style="margin-bottom: 2rem;">
+        <h1 style="font-size: 1.8rem; margin-bottom: 0.5rem;">Welcome Back</h1>
+        <p style="color: var(--color-text-muted); font-size: 0.95rem;">Sign in to access your orders, wishlist, and profile.</p>
+      </div>
+
+      <!-- Quick Demo Credentials Box -->
+      <div style="background: rgba(37,99,235,0.06); border: 1px dashed var(--color-accent); border-radius: var(--radius-md); padding: 1rem; margin-bottom: 1.5rem; font-size: 0.85rem;">
+        <strong>Demo Login Credentials:</strong><br/>
+        • User: <code>user@shopsphere.com</code> / <code>userpassword123</code><br/>
+        • Admin: <code>admin@shopsphere.com</code> / <code>adminpassword123</code>
+      </div>
+
+      <form id="login-form">
+        <div class="form-group">
+          <label class="form-label" for="email">Email Address</label>
+          <input type="email" id="email" class="form-control" placeholder="user@shopsphere.com" required />
+        </div>
+
+        <div class="form-group">
+          <label class="form-label" for="password">Password</label>
+          <input type="password" id="password" class="form-control" placeholder="••••••••" required />
+        </div>
+
+        <button type="submit" class="btn btn-primary" style="width: 100%; padding: 0.85rem; font-size: 1rem; margin-top: 1rem;">
+          Sign In
+        </button>
+      </form>
+
+      <div class="text-center" style="margin-top: 1.75rem; font-size: 0.9rem; color: var(--color-text-muted);">
+        Don't have an account yet? <a href="/register" style="color: var(--color-accent); font-weight: 700;">Create Account</a>
+      </div>
+
+    </div>
+  </main>
+
+  <script src="/js/api.js"></script>
+  <script src="/js/toast.js"></script>
+  <script src="/js/auth.js"></script>
+  <script src="/js/main.js"></script>
+  <script>
+    document.getElementById('login-form').addEventListener('submit', async (e) => {
+      e.preventDefault();
+      const email = document.getElementById('email').value.trim();
+      const password = document.getElementById('password').value;
+
+      try {
+        await Auth.login(email, password);
+        const urlParams = new URLSearchParams(window.location.search);
+        const redirect = urlParams.get('redirect') || '/';
+        setTimeout(() => window.location.href = redirect, 500);
+      } catch (err) {
+        // Handled by Auth class toast
+      }
+    });
+  </script>
+</body>
+</html>

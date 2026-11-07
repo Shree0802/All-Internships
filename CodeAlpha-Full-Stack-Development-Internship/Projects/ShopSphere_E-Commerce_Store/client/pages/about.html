@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>About Us – ShopSphere</title>
+  <link rel="stylesheet" href="/css/main.css">
+  <link rel="stylesheet" href="/css/components.css">
+  <link rel="stylesheet" href="/css/dark-mode.css">
+  <link rel="stylesheet" href="/css/responsive.css">
+</head>
+<body>
+
+  <!-- Navbar -->
+  <nav class="navbar">
+    <div class="container navbar-container">
+      <a href="/" class="brand-logo"><div class="brand-icon">🛍️</div>Shop<span>Sphere</span></a>
+      <ul class="nav-menu" id="nav-menu">
+        <li><a href="/" class="nav-link">Home</a></li>
+        <li><a href="/products" class="nav-link">Products</a></li>
+        <li><a href="/about" class="nav-link active">About</a></li>
+        <li><a href="/contact" class="nav-link">Contact</a></li>
+      </ul>
+      <div class="nav-actions">
+        <button class="icon-btn" id="theme-toggle-btn">🌙</button>
+        <a href="/cart" class="icon-btn">🛒<span class="cart-badge-count" style="display:none;">0</span></a>
+        <div class="user-menu-container">
+          <button class="icon-btn" id="user-menu-btn">👤</button>
+          <div class="user-dropdown" id="user-dropdown"></div>
+        </div>
+      </div>
+    </div>
+  </nav>
+
+  <main class="main-content">
+    <section class="hero" style="padding: 4rem 0; text-align: center;">
+      <div class="container">
+        <h1 style="font-size: 3rem; color: #fff; margin-bottom: 1rem;">About ShopSphere</h1>
+        <p style="color: #94a3b8; max-width: 650px; margin: 0 auto;">Building the future of modern e-commerce with performance, elegance, and uncompromised software engineering standards.</p>
+      </div>
+    </section>
+
+    <section class="section">
+      <div class="container" style="max-width: 900px;">
+        <div style="background: var(--color-card-bg); border: 1px solid var(--color-border); border-radius: var(--radius-lg); padding: 3rem;">
+          <h2 style="font-size: 1.8rem; margin-bottom: 1.25rem;">Our Mission</h2>
+          <p style="color: var(--color-text-muted); line-height: 1.8; margin-bottom: 2rem;">
+            ShopSphere was engineered as part of the CodeAlpha Full Stack Development Internship to demonstrate production-ready web application standards. Designed with clean MVC backend architecture, MongoDB Mongoose data modeling, JWT cookie security, and a responsive glassmorphic Vanilla JS frontend interface.
+          </p>
+
+          <h2 style="font-size: 1.8rem; margin-bottom: 1.25rem;">Core Tech Stack Highlights</h2>
+          <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 1.5rem; margin-bottom: 2rem;">
+            <div style="background: var(--color-bg); padding: 1.25rem; border-radius: var(--radius-md); border: 1px solid var(--color-border);">
+              <h4 style="color: var(--color-accent);">Node.js & Express</h4>
+              <p style="font-size: 0.85rem; color: var(--color-text-muted);">Scalable RESTful API architecture with error handlers & input validation.</p>
+            </div>
+            <div style="background: var(--color-bg); padding: 1.25rem; border-radius: var(--radius-md); border: 1px solid var(--color-border);">
+              <h4 style="color: var(--color-accent);">MongoDB & Mongoose</h4>
+              <p style="font-size: 0.85rem; color: var(--color-text-muted);">Schema validation, text indexing, and seamless in-memory fallback support.</p>
+            </div>
+            <div style="background: var(--color-bg); padding: 1.25rem; border-radius: var(--radius-md); border: 1px solid var(--color-border);">
+              <h4 style="color: var(--color-accent);">JWT & Bcrypt</h4>
+              <p style="font-size: 0.85rem; color: var(--color-text-muted);">Secure token authentication, password hashing, and role protection.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <div class="container"><div class="footer-bottom"><p>&copy; 2026 ShopSphere</p></div></div>
+  </footer>
+
+  <script src="/js/api.js"></script>
+  <script src="/js/toast.js"></script>
+  <script src="/js/auth.js"></script>
+  <script src="/js/main.js"></script>
+</body>
+</html>
